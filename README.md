@@ -1,5 +1,5 @@
 # DeMon_MVPRR
-一个基于Retrofit2.0+RxJava2.0的MVP模式（Contract）的请求优化框架。 
+一个基于Retrofit2.0+RxJava2.0的MVP模式（Contract）的网络请求优化框架。 
 
 CSDN原文链接：<http://blog.csdn.net/DeMonliuhui/article/details/78071485>
 
