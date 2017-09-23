@@ -3,9 +3,6 @@ MVP+Retrofit2.0+RxJava2.0
 
 ### DeMon_MVPRR框架说明
 
-DeMon_MVPRR框架GitHub地址：  
-><https://github.com/DeMonLiu623/DeMon_MVPRR>  
-
 DeMon_MVPRR框架Demo示例，GitHub地址： 
 ><https://github.com/DeMonLiu623/MVPRRDemo> 
 
