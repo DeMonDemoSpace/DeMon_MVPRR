@@ -11,7 +11,7 @@ import java.lang.ref.WeakReference;
 
 public abstract class BasePresenter<T extends BaseView> {
     protected WeakReference<T> mView;
-    protected BaseModel model = new BaseModel();
+    protected BaseModel mModel = new BaseModel();
     protected Context mContext;
 
     public BasePresenter(T view) {
@@ -28,8 +28,8 @@ public abstract class BasePresenter<T extends BaseView> {
             mView.clear();
             mView = null;
         }
-        if (model != null) {
-            model = null;
+        if (mModel != null) {
+            mModel = null;
         }
     }
 }
