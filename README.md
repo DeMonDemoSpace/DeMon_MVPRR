@@ -1,7 +1,24 @@
 # DeMon_MVPRR
-MVP+Retrofit2.0+RxJava2.0
+一个基于Retrofit2.0+RxJava2.0的MVP模式（Contract）的请求优化框架。 
 
-### DeMon_MVPRR框架说明
+CSDN原文链接：<http://blog.csdn.net/DeMonliuhui/article/details/78071485>
+
+### 声明
+基于Retrofit2.0+RxJava2.0的原创框架，欢迎开源，欢迎复制粘贴，欢迎点击star&fork，谢谢支持！  
+第一次写框架，难免有错误，欢迎联系指正：  
+E-Mail：DeMonLiu126@126.com  
+CSDN：<http://blog.csdn.net/demonliuhui>  
+个人主页：<https://demonliu623.github.io/>
+
+### DeMon_MVPRR的优点
+
+1. 在Retrofit的基础上利用OKHttp配置了缓存及超时策略。
+2. 封装了RxJava的订阅及线程调度过程，减少了RxJava使用过程中的代码量。
+3. 利用RxJava的订阅过程结合Handler机制，在网络请求耗时的时候封装了一个ProgressDialog,增加了用户体验。
+4. 根据谷歌官方的MVP文档，采用Contract管理Presenter和View接口，使用起来更方便。
+5. 封装了基础的Model，Presenter，View interface，View（Activity），进一步解耦，方便了MVP的调用，减少了实例化操作，释放内存。
+
+### DeMon_MVPRR使用说明
 
 DeMon_MVPRR框架Demo示例，GitHub地址： 
 ><https://github.com/DeMonLiu623/MVPRRDemo> 
@@ -27,19 +44,13 @@ dependencies {
 }
 ```
 
+#### 添加网络相关权限
 添加网络相关权限：
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
-#### 本框架的优点
-
-1. 在Retrofit的基础上利用OKHttp配置了缓存及超时策略。
-2. 封装了RxJava的订阅及线程调度过程，减少了RxJava使用过程中的代码量。
-3. 利用RxJava的订阅过程结合Handler机制，在网络请求耗时的时候封装了一个ProgressDialog,增加了用户体验。
-4. 根据谷歌官方的MVP文档，采用Contract管理Presenter和View接口，使用起来更方便。
-5. 封装了基础的Model，Presenter，View interface，View（Activity），进一步解耦，方便了MVP的调用，减少了实例化操作，释放内存。
 
 #### 框架包含依赖
 
@@ -60,9 +71,10 @@ dependencies {
 ```
 添加本框架的依赖后，上面依赖无需重复添加。
 
-#### 框架实现说明
+### 框架实现说明
+
 框架目录结构如下：  
-![](file://C:\Users\DeMon\Desktop\111.PNG)  
+![](http://img.blog.csdn.net/20170923161018015?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvRGVNb25saXVodWk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)  
 
 主要讲解各个类的作用，不再贴出代码详解。  
 看代码请直接戳[DeMon_MVPRR](https://github.com/DeMonLiu623/DeMon_MVPRR)  
@@ -153,3 +165,4 @@ RxJava的订阅过程。
 
 ##### NetWorkUtil.java
 监听及判断网络状态，用于根据网络状态配置OkHttp策略。
+
