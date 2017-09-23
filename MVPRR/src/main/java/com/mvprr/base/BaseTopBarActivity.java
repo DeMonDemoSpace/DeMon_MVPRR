@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
  * 减少在xml中的include
  */
 public abstract class BaseTopBarActivity<T extends BasePresenter> extends AppCompatActivity {
-    private T mPresenter;
+    public T mPresenter;
     Toolbar toolbar;
     FrameLayout viewContent;
 
