@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DeMon_MVPRR.iml" filepath="$PROJECT_DIR$/DeMon_MVPRR.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MVPRR/MVPRR.iml" filepath="$PROJECT_DIR$/MVPRR/MVPRR.iml" />
+    </modules>
+  </component>
+</project>
