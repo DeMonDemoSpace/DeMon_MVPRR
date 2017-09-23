@@ -18,6 +18,9 @@ CSDN：<http://blog.csdn.net/demonliuhui>  
 4. 根据谷歌官方的MVP文档，采用Contract管理Presenter和View接口，使用起来更方便。
 5. 封装了基础的Model，Presenter，View interface，View（Activity），进一步解耦，方便了MVP的调用，减少了实例化操作，释放内存。
 
+### 效果示例
+![](https://im.ezgif.com/tmp/ezgif-1-fbcb2ee857.gif) 
+
 ### DeMon_MVPRR使用说明
 
 DeMon_MVPRR框架Demo示例，GitHub地址： 
