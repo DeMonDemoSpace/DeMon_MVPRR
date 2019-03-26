@@ -1,9 +1,7 @@
 package com.demon.demon_mvprr.mvpc.model;
 
-import com.demon.baseframe.model.BaseModel;
-import com.demon.baseutil.des.DESUtil;
-import com.google.gson.Gson;
-import com.wisefly.nurtouch.data.Constant;
+
+import com.demon.mvprr.model.BaseModel;
 
 import java.io.File;
 import java.util.Map;
@@ -26,7 +24,7 @@ public class Model extends BaseModel {
 
     public void post(String url, OnNext listener) {
         final Observer<String> observer = new IObserver(mContext, listener);
-        ApiNurTouch.getBaseService().post(url)
+        Api.getBaseService().post(url)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -34,9 +32,8 @@ public class Model extends BaseModel {
     }
 
     public void post(String url, Map<String, Object> maps, OnNext listener) {
-        String s = DESUtil.encoding(new Gson().toJson(maps));
         final Observer<String> observer = new IObserver(mContext, listener);
-        ApiNurTouch.getBaseService().post(url, s)
+        Api.getBaseService().post(url, maps)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -44,8 +41,8 @@ public class Model extends BaseModel {
     }
 
     public void postNoDialog(String url, Map<String, Object> maps, OnNext listener) {
-        final Observer<String> observer = new IObserver(mContext, listener, false);
-        ApiNurTouch.getBaseService().post(url, maps)
+        final Observer<String> observer = new IObserver(mContext, listener);
+        Api.getBaseService().post(url, maps)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -56,8 +53,8 @@ public class Model extends BaseModel {
     public void uploadFile(String url, File file, String name, OnNext listener) {
         final Observer<String> observer = new IObserver(mContext, listener);
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-        MultipartBody.Part filePart = MultipartBody.Part.createFormData(Constant.FILE, name, requestFile);
-        ApiNurTouch.getBaseService().uploadsFile(url, filePart)
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", name, requestFile);
+        Api.getBaseService().uploadsFile(url, filePart)
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
