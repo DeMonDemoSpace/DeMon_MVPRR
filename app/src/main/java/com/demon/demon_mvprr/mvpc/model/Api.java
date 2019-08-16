@@ -1,30 +1,38 @@
 package com.demon.demon_mvprr.mvpc.model;
 
 import com.demon.mvprr.model.BaseApi;
-import com.demon.mvprr.model.BaseService;
+import retrofit2.Retrofit;
 
 public class Api {
 
     //测试api，淘宝商品搜索建议
     //访问http://www.bejson.com/knownjson/webInterface/可见
-    public static String base_url = "https://suggest.taobao.com/";
+    private static String base_url = "https://suggest.taobao.com/";
 
-    public volatile static BaseService apiService;
+    private volatile static Retrofit retrofit;
 
-    public static BaseService getBaseService() {
-        if (apiService == null) {
+    public static Retrofit getRetrofit() {
+        if (retrofit == null) {
             synchronized (Api.class) {
-                if (apiService == null) {
+                if (retrofit == null) {
                     new Api();
                 }
             }
         }
-        return apiService;
+        return retrofit;
     }
 
-    public Api() {
+    private Api() {
         BaseApi baseApi = new BaseApi();
-        apiService = baseApi.getRetrofit(base_url).create(BaseService.class);
+        retrofit = baseApi.getRetrofit(base_url, new TokenInterceptor());
     }
 
+    /*public BaseService getBaseServer(){
+        return  retrofit.create(BaseService.class);
+    }
+
+
+    public ApiService getApiServer(){
+        return  retrofit.create(ApiService.class);
+    }*/
 }

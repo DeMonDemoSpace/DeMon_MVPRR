@@ -14,7 +14,7 @@ public interface MainContract {
         void result(String s);
     }
 
-    abstract class Presneter extends BasePresenter<View> {
+    abstract class Presenter extends BasePresenter<View> {
         public abstract void Taobao(String q);
     }
 }

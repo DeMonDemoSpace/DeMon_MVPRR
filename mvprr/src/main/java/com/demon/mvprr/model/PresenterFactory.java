@@ -37,7 +37,9 @@ public class PresenterFactory {
         Class<? extends BasePresenter>[] array = annotation.value();
         for (Class<? extends BasePresenter> e : array) {
             BasePresenter presenter = getPresenter(e);
-            list.add(presenter);
+            if (presenter != null) {
+                list.add(presenter);
+            }
         }
         return list;
     }

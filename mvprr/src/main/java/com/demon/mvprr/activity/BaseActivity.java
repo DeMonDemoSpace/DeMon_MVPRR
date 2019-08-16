@@ -10,9 +10,8 @@ import com.demon.mvprr.model.BasePresenter;
 import com.demon.mvprr.model.BaseView;
 import com.demon.mvprr.model.PresenterFactory;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.ButterKnife;
 
 
 /**
@@ -23,7 +22,6 @@ import butterknife.ButterKnife;
  * 1.1 在需要使用Presenter的Activity类上方添加注解@CreatePresenter({XXXPresenter.class})，声明所需要的Presenter
  * 1.2 实现业务逻辑的时候通过getPresenter(Class)来获取Presenter
  */
-
 public abstract class BaseActivity extends AppCompatActivity implements BaseView {
     protected final String TAG = this.getClass().getSimpleName();
     /**
@@ -36,19 +34,15 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContext = this;
         BaseModel.mContext = this;
+        mContext = this;
         initParam(getIntent());
         initLayout();
         initPresenter();
         initCreate();
     }
 
-    /**
-     * 根据Bundle参数进行初始化
-     */
-    protected void initParam(Intent intent) {
-    }
+
 
     /**
      * 初始化布局
@@ -57,8 +51,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
      */
     protected void initLayout() {
         setContentView(bindLayout());
-        //在BaseActivity进行绑定，减少子类代码的书写
-        ButterKnife.bind(this);
     }
 
     /**
@@ -79,6 +71,9 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
      */
     private void createPresenter() {
         mPresenterList = PresenterFactory.getPresenter(this);
+        if (mPresenterList == null) {
+            mPresenterList = new ArrayList<>();
+        }
     }
 
     /**
@@ -106,6 +101,10 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseView
             }
         }
         return null;
+    }
+
+    protected void initParam(Intent intent) {
+
     }
 
     /**

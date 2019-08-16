@@ -45,7 +45,7 @@ public class DialogHandler extends Handler {
         });
         if (!pd.isShowing() && context != null) {
             if (context instanceof Activity) {
-                if (!((Activity) context).isFinishing() && !((Activity) context).isDestroyed()) {
+                if (!((Activity) context).isFinishing()) {
                     pd.show();
                 }
             } else {

@@ -4,15 +4,10 @@ group = 'com.github.DeMonLiu623'
 android {
     compileSdkVersion 28
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath = true
-            }
-        }
     }
 
     buildTypes {
@@ -27,13 +22,11 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    implementation 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.10.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
-    implementation 'com.google.code.gson:gson:2.8.5'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.5'
+    api 'com.squareup.okhttp3:okhttp:3.12.1'
+    api 'com.squareup.okhttp3:logging-interceptor:3.10.0'
+    api 'com.squareup.retrofit2:retrofit:2.5.0'
+    api 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:2.2.2'
+    api 'com.squareup.retrofit2:converter-scalars:2.5.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
 }
