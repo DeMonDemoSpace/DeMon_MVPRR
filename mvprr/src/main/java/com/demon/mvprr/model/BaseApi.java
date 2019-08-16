@@ -61,8 +61,8 @@ public class BaseApi {
         Retrofit retrofit = new Retrofit.Builder()
                 .client(client)
                 .baseUrl(baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())//请求的结果转为实体类
                 .addConverterFactory(ScalarsConverterFactory.create())//请求结果转换为基本类型，一般为String
+                .addConverterFactory(GsonConverterFactory.create())//请求的结果转为实体类
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())//适配RxJava2.0
                 .build();
         return retrofit;

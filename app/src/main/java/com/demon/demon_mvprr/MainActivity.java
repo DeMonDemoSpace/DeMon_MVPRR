@@ -1,16 +1,11 @@
 package com.demon.demon_mvprr;
 
-import android.widget.TextView;
-import com.demon.demon_mvprr.mvpc.contract.MainContract;
-import com.demon.demon_mvprr.mvpc.presenter.MainPresenter;
+import android.content.Intent;
+import android.view.View;
 import com.demon.mvprr.activity.BaseActivity;
-import com.demon.mvprr.model.CreatePresenter;
 
-@CreatePresenter({MainPresenter.class})
-public class MainActivity extends BaseActivity implements MainContract.View {
+public class MainActivity extends BaseActivity {
 
-    TextView text;
-    private MainPresenter presenter;
 
     @Override
     protected int bindLayout() {
@@ -19,13 +14,19 @@ public class MainActivity extends BaseActivity implements MainContract.View {
 
     @Override
     protected void initCreate() {
-        text = findViewById(R.id.text);
-        presenter = getPresenter(MainPresenter.class);
-        presenter.Taobao("手机");
+        findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, JavaJsonActivity.class));
+            }
+        });
+        findViewById(R.id.btn2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, JavaBeanActivity.class));
+            }
+        });
     }
 
-    @Override
-    public void result(String s) {
-        text.setText(s);
-    }
+
 }

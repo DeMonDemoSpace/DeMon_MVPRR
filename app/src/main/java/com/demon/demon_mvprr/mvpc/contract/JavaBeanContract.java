@@ -1,5 +1,6 @@
 package com.demon.demon_mvprr.mvpc.contract;
 
+import com.demon.demon_mvprr.bean.TaobaoBean;
 import com.demon.mvprr.model.BasePresenter;
 import com.demon.mvprr.model.BaseView;
 
@@ -9,9 +10,9 @@ import com.demon.mvprr.model.BaseView;
  * @email 757454343@qq.com
  * @description
  */
-public interface MainContract {
+public interface JavaBeanContract {
     interface View extends BaseView {
-        void result(String s);
+        void result(TaobaoBean bean);
     }
 
     abstract class Presenter extends BasePresenter<View> {

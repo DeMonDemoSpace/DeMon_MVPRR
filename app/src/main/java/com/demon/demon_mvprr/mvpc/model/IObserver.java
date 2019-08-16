@@ -1,5 +1,6 @@
 package com.demon.demon_mvprr.mvpc.model;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import com.demon.mvprr.model.BaseObserver;
 
@@ -27,6 +28,12 @@ public class IObserver<T> extends BaseObserver<T> {
         listener.onError(e.getMessage());
     }
 
-
+    //加载进度框，重写可自定义
+    @Override
+    public ProgressDialog initDialog(Context context) {
+        ProgressDialog dialog = new ProgressDialog(context);
+        dialog.setTitle("数据加载中");
+        return dialog;
+    }
 }
 

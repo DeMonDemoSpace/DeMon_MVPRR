@@ -5,10 +5,16 @@ import com.demon.demon_mvprr.bean.TaobaoBean;
 import com.demon.mvprr.model.BaseModel;
 import com.demon.mvprr.model.BaseService;
 import io.reactivex.Observer;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
+import java.io.File;
 import java.util.Map;
 
-
+/**
+ * 网络请求model
+ */
 public class Model extends BaseModel {
     private static final String TAG = "Model";
     private static Model instance = new Model();
@@ -22,10 +28,6 @@ public class Model extends BaseModel {
         return instance;
     }
 
-    /*public void post(String url, OnRequestListener listener) {
-        Observer<String> observer = new IObserver(mContext, listener);
-        addSubcription(Api.getBaseService().post(url), observer);
-    }*/
 
     public void get(String url, OnRequestListener<String> listener) {
         Observer<String> observer = new IObserver<>(mContext, listener);
@@ -48,18 +50,32 @@ public class Model extends BaseModel {
     }
 
 
-
-    /*public void postNoDialog(String url, Map<String, Object> maps, OnRequestListener listener) {
-        Observer<String> observer = new IObserver(mContext, listener, false);
-        addSubcription(Api.getBaseService().post(url, maps), observer);
+    /**
+     * 不显示dialog
+     *
+     * @param url
+     * @param maps
+     * @param listener
+     */
+    public void postNoDialog(String url, Map<String, Object> maps, OnRequestListener<String> listener) {
+        Observer<String> observer = new IObserver<>(mContext, listener, false);
+        addSubcription(baseService.post(url, maps), observer);
     }
 
 
-    public void uploadFile(String url, File file, String name, OnRequestListener listener) {
-        Observer<String> observer = new IObserver(mContext, listener);
+    /**
+     * 文件上传
+     *
+     * @param url
+     * @param file
+     * @param name
+     * @param listener
+     */
+    public void uploadFile(String url, File file, String name, OnRequestListener<String> listener) {
+        Observer<String> observer = new IObserver<>(mContext, listener);
         RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
         MultipartBody.Part filePart = MultipartBody.Part.createFormData("file", name, requestFile);
-        addSubcription(Api.getBaseService().uploadsFile(url, filePart), observer);
+        addSubcription(baseService.uploadsFile(url, filePart), observer);
 
-    }*/
+    }
 }
