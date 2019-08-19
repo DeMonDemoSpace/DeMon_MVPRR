@@ -17,16 +17,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".KotlinJsonActivity"></activity>
-        <activity android:name=".JavaBeanActivity" />
-        <activity android:name=".JavaJsonActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.KotlinFragmentActivity"></activity>
+        <activity android:name=".activity.KotlinJsonActivity" />
+        <activity android:name=".activity.JavaBeanActivity" />
+        <activity android:name=".activity.JavaJsonActivity" />
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.KotlinBeanActivity" />
     </application>
 
 </manifest>

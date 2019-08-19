@@ -1,22 +1,23 @@
-package com.demon.demon_mvprr;
+package com.demon.demon_mvprr.activity;
 
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.demon.demon_mvprr.R;
 import com.demon.demon_mvprr.bean.TaobaoBean;
 import com.demon.demon_mvprr.mvpc.contract.JavaBeanContract;
 import com.demon.demon_mvprr.mvpc.presenter.JavaBeanPresenter;
 import com.demon.mvprr.activity.BaseActivity;
-import com.demon.mvprr.model.CreatePresenter;
 
 import java.util.List;
 
-@CreatePresenter({JavaBeanPresenter.class})
-public class JavaBeanActivity extends BaseActivity implements JavaBeanContract.View {
+/**
+ *
+ */
+public class JavaBeanActivity extends BaseActivity<JavaBeanPresenter> implements JavaBeanContract.View {
 
-    private JavaBeanPresenter presenter;
     private EditText et;
     private TextView tv;
 
@@ -29,7 +30,6 @@ public class JavaBeanActivity extends BaseActivity implements JavaBeanContract.V
     protected void initCreate() {
         et = findViewById(R.id.etContent);
         tv = findViewById(R.id.text);
-        presenter = getPresenter(JavaBeanPresenter.class);
 
         findViewById(R.id.btn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,7 +39,7 @@ public class JavaBeanActivity extends BaseActivity implements JavaBeanContract.V
                     Toast.makeText(mContext, "输入内容不能为空！", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                presenter.Taobao(s);
+                mPresenter.Taobao(s);
             }
         });
 

@@ -3,7 +3,6 @@ package com.demon.demon_mvprr.mvpc.presenter
 import com.demon.demon_mvprr.mvpc.contract.KotlinJsonContract
 import com.demon.demon_mvprr.mvpc.model.Model
 import com.demon.demon_mvprr.mvpc.model.OnRequestListener
-import com.demon.mvprr.model.BasePresenter
 import java.util.*
 
 /**
@@ -12,7 +11,7 @@ import java.util.*
  * @email 757454343@qq.com
  * @description
  */
-class KotlinJsonPresenter : BasePresenter<KotlinJsonContract.View>() {
+class KotlinJsonPresenter : KotlinJsonContract.Presenter() {
     override fun Taobao(q: String) {
         val map = HashMap<String, Any>()
         map["code"] = "utf-8"
