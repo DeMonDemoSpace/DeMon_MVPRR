@@ -22,11 +22,12 @@ android {
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
-    api 'com.squareup.okhttp3:okhttp:3.12.1'
-    api 'com.squareup.okhttp3:logging-interceptor:3.10.0'
-    api 'com.squareup.retrofit2:retrofit:2.5.0'
-    api 'com.trello.rxlifecycle2:rxlifecycle-android-lifecycle:2.2.2'
-    api 'com.squareup.retrofit2:converter-scalars:2.5.0'
-    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
-    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.okhttp3:okhttp:3.12.1'//OKHttp3.0依赖
+    api 'com.squareup.okhttp3:logging-interceptor:3.10.0'//OKHttp日志优化策略
+    api 'com.squareup.retrofit2:retrofit:2.5.0'//Retrofit2.0所需依赖
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'//Rxandroid2.0线程调度依赖
+    api 'io.reactivex.rxjava2:rxjava:2.2.5' //RxJava2.0所需依赖
+    api 'com.squareup.retrofit2:converter-scalars:2.5.0'//结果转为基本类型所需依赖
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'//RxJava2.0+Retrofit2.0适配依赖
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'//结果转为Bean类型所需依赖
 }

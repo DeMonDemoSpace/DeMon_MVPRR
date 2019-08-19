@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.demon.demon_mvprr.R;
 import com.demon.demon_mvprr.mvpc.contract.JavaJsonContract;
 import com.demon.demon_mvprr.mvpc.presenter.JavaJsonPresenter;
-import com.demon.mvprr.fragment.BaseFragment;
+import com.demon.mvprr.fragment.BaseMvpFragment;
 
 /**
  * @author DeMon
@@ -16,7 +16,7 @@ import com.demon.mvprr.fragment.BaseFragment;
  * @email 757454343@qq.com
  * @description
  */
-public class JavaJsonFragment extends BaseFragment<JavaJsonPresenter> implements JavaJsonContract.View {
+public class JavaJsonFragment extends BaseMvpFragment<JavaJsonPresenter> implements JavaJsonContract.View {
     private EditText et;
     private TextView tv;
 

@@ -16,8 +16,8 @@ public abstract class BaseObserver<T> implements Observer<T>, DialogHandler.Canc
     private DialogHandler mDialogHandler;
     private Disposable d;
     private Context mContext;
-    private boolean isShow = true;
-    private ProgressDialog dialog;
+    private boolean isShow = true; //是否显示进度框
+    private ProgressDialog dialog; //进度框
 
     public BaseObserver(Context context) {
         mContext = context;
@@ -37,12 +37,12 @@ public abstract class BaseObserver<T> implements Observer<T>, DialogHandler.Canc
 
     @Override
     public void onNext(T t) {
-        onNextResult(t);
+        onNextResult(t);//请求成功
     }
 
     @Override
     public void onError(Throwable e) {
-        onErrorResult(e);
+        onErrorResult(e);//请求出错
         dismissProgressDialog();
     }
 
@@ -64,10 +64,19 @@ public abstract class BaseObserver<T> implements Observer<T>, DialogHandler.Canc
     protected abstract void onErrorResult(Throwable e);
 
 
+    /**
+     * 请求过程中显示的进度dialog，可重写自定义
+     *
+     * @param context
+     * @return
+     */
     public ProgressDialog initDialog(Context context) {
         return new ProgressDialog(context);
     }
 
+    /**
+     * 使用handle异步及时控制dialog的显示隐藏
+     */
     private void showProgressDialog() {
         if (dialog == null) {
             dialog = initDialog(mContext);

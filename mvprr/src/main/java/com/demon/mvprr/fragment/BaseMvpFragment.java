@@ -16,7 +16,7 @@ import com.demon.mvprr.util.TUtil;
  * @date 2017/12/18
  * @description Fragment 基类
  */
-public abstract class BaseFragment<T extends BasePresenterInfc> extends Fragment implements BaseView {
+public abstract class BaseMvpFragment<T extends BasePresenterInfc> extends Fragment implements BaseView {
 
     protected final String TAG = this.getClass().getSimpleName();
     /**

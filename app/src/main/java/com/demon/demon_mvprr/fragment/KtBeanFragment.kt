@@ -5,7 +5,7 @@ import com.demon.demon_mvprr.R
 import com.demon.demon_mvprr.bean.TaobaoBean
 import com.demon.demon_mvprr.mvpc.contract.KotlinBeanContract
 import com.demon.demon_mvprr.mvpc.presenter.KotlinBeanPresenter
-import com.demon.mvprr.fragment.BaseFragment
+import com.demon.mvprr.fragment.BaseMvpFragment
 import kotlinx.android.synthetic.main.activity_json.*
 
 /**
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_json.*
  * @email 757454343@qq.com
  * @description
  */
-class KtBeanFragment : BaseFragment<KotlinBeanPresenter>(), KotlinBeanContract.View {
+class KtBeanFragment : BaseMvpFragment<KotlinBeanPresenter>(), KotlinBeanContract.View {
     override fun isLazyLoad(): Boolean {
         return false
     }

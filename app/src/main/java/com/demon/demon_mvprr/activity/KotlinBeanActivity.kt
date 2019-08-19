@@ -5,7 +5,7 @@ import com.demon.demon_mvprr.R
 import com.demon.demon_mvprr.bean.TaobaoBean
 import com.demon.demon_mvprr.mvpc.contract.KotlinBeanContract
 import com.demon.demon_mvprr.mvpc.presenter.KotlinBeanPresenter
-import com.demon.mvprr.activity.BaseActivity
+import com.demon.mvprr.activity.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_json.*
 
 /**
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_json.*
  * @email 757454343@qq.com
  * @description
  */
-class KotlinBeanActivity : BaseActivity<KotlinBeanPresenter>(), KotlinBeanContract.View {
+class KotlinBeanActivity : BaseMvpActivity<KotlinBeanPresenter>(), KotlinBeanContract.View {
     override fun bindLayout(): Int {
         return R.layout.activity_json
     }

@@ -5,11 +5,11 @@ import android.support.v4.app.FragmentPagerAdapter
 import com.demon.demon_mvprr.R
 import com.demon.demon_mvprr.fragment.JavaJsonFragment
 import com.demon.demon_mvprr.fragment.KtBeanFragment
-import com.demon.mvprr.activity.BaseActivity
+import com.demon.mvprr.activity.BaseMvpActivity
 import com.demon.mvprr.model.BasePresenterInfc
 import kotlinx.android.synthetic.main.activity_fragment.*
 
-class KotlinFragmentActivity : BaseActivity<BasePresenterInfc>() {
+class KotlinFragmentActivity : BaseMvpActivity<BasePresenterInfc>() {
     override fun bindLayout(): Int {
         return R.layout.activity_fragment
     }

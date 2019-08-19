@@ -3,9 +3,9 @@ package com.demon.demon_mvprr.activity;
 import android.content.Intent;
 import android.view.View;
 import com.demon.demon_mvprr.R;
-import com.demon.mvprr.activity.BaseActivity;
+import com.demon.mvprr.activity.BaseMvpActivity;
 
-public class MainActivity extends BaseActivity {
+public class MainActivity extends BaseMvpActivity {
 
 
     @Override

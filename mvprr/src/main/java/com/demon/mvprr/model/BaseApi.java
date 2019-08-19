@@ -46,11 +46,11 @@ public class BaseApi {
         builder.readTimeout(TimeOut, TimeUnit.MILLISECONDS)
                 .writeTimeout(TimeOut, TimeUnit.MILLISECONDS)
                 .connectTimeout(TimeOut, TimeUnit.MILLISECONDS)
-                .addInterceptor(new CacheControlInterceptor())
-                .addNetworkInterceptor(new CacheControlInterceptor())
+                .addInterceptor(new CacheControlInterceptor())//缓存
+                .addNetworkInterceptor(new CacheControlInterceptor())//网络缓存
                 .cache(cache);
         if (BuildConfig.DEBUG) {
-            builder.addInterceptor(logInterceptor);
+            builder.addInterceptor(logInterceptor);//日志
         }
 
         for (Interceptor interceptor : interceptors) {

@@ -4,10 +4,10 @@ import android.widget.Toast
 import com.demon.demon_mvprr.R
 import com.demon.demon_mvprr.mvpc.contract.KotlinJsonContract
 import com.demon.demon_mvprr.mvpc.presenter.KotlinJsonPresenter
-import com.demon.mvprr.activity.BaseActivity
+import com.demon.mvprr.activity.BaseMvpActivity
 import kotlinx.android.synthetic.main.activity_json.*
 
-class KotlinJsonActivity : BaseActivity<KotlinJsonPresenter>(), KotlinJsonContract.View {
+class KotlinJsonActivity : BaseMvpActivity<KotlinJsonPresenter>(), KotlinJsonContract.View {
 
     override fun bindLayout(): Int {
         return R.layout.activity_json

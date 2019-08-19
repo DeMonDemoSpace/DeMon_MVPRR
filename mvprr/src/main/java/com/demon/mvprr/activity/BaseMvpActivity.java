@@ -15,7 +15,7 @@ import com.demon.mvprr.util.TUtil;
  * @date 2017/12/18
  * @description Activity 基类
  */
-public abstract class BaseActivity<T extends BasePresenterInfc> extends AppCompatActivity implements BaseView {
+public abstract class BaseMvpActivity<T extends BasePresenterInfc> extends AppCompatActivity implements BaseView {
     protected final String TAG = this.getClass().getSimpleName();
     public Context mContext;
     protected T mPresenter;
@@ -35,7 +35,7 @@ public abstract class BaseActivity<T extends BasePresenterInfc> extends AppCompa
     /**
      * 初始化布局
      * 封装成方法的目的：
-     * 例如需要实现含有标题栏的BaseActivity可重写此方法
+     * 例如需要实现含有标题栏的BaseMvpActivity可重写此方法
      */
     protected void initLayout() {
         setContentView(bindLayout());
@@ -63,11 +63,12 @@ public abstract class BaseActivity<T extends BasePresenterInfc> extends AppCompa
 
     }
 
+
+    protected abstract void initCreate();
+
     /**
      * 解绑View
      */
-    protected abstract void initCreate();
-
     @Override
     protected void onDestroy() {
         super.onDestroy();

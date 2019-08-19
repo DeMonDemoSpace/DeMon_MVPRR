@@ -9,14 +9,14 @@ import com.demon.demon_mvprr.R;
 import com.demon.demon_mvprr.bean.TaobaoBean;
 import com.demon.demon_mvprr.mvpc.contract.JavaBeanContract;
 import com.demon.demon_mvprr.mvpc.presenter.JavaBeanPresenter;
-import com.demon.mvprr.activity.BaseActivity;
+import com.demon.mvprr.activity.BaseMvpActivity;
 
 import java.util.List;
 
 /**
  *
  */
-public class JavaBeanActivity extends BaseActivity<JavaBeanPresenter> implements JavaBeanContract.View {
+public class JavaBeanActivity extends BaseMvpActivity<JavaBeanPresenter> implements JavaBeanContract.View {
 
     private EditText et;
     private TextView tv;
