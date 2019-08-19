@@ -27,12 +27,5 @@ public class Api {
         retrofit = baseApi.getRetrofit(base_url, new TokenInterceptor());
     }
 
-    /*public BaseService getBaseServer(){
-        return  retrofit.create(BaseService.class);
-    }
 
-
-    public ApiService getApiServer(){
-        return  retrofit.create(ApiService.class);
-    }*/
 }

@@ -12,6 +12,7 @@ public class App extends BaseApp {
     @Override
     public void onCreate() {
         super.onCreate();
+        //如果你Application已经继承，可以如下设置
         //BaseApp.setContext(getApplicationContext());
     }
 }
